@@ -27,21 +27,21 @@ const projects = [
   },
   {
     id: 2,
-    title: 'TripMate',
-    emoji: '🗺️',
+    title: 'Routing Engine',
+    emoji: '📍',
     color: '#3b82f6',
     colorDark: 'rgba(59,130,246,0.15)',
     gradient: 'from-blue-600 to-cyan-600',
-    tag: 'Algorithms · Graph Theory',
+    tag: 'Algorithms · C++',
     description:
-      'Graph-based route optimization system implementing Dijkstra and A* algorithms. Handles 10,000+ node graphs with optimized data structures for blazing-fast pathfinding.',
-    tech: ['C++', 'Python', 'Graph Theory', 'React.js', 'D3.js', 'Visualization'],
+      'Google Maps-style routing engine using efficient graph-based optimization. Implemented Dijkstra and A* algorithms to handle 10,000+ nodes, achieving a 60% boost in pathfinding performance using STL and custom heuristics.',
+    tech: ['C++', 'STL', 'Graph Algorithms', 'Dijkstra', 'A*', 'Heuristics'],
     github: 'https://github.com/vinyaaggarwal',
-    demo: 'https://tripmate-demo.vercel.app',
+    demo: 'https://github.com/vinyaaggarwal',
     demoVideo: null,
     screens: [
-      { label: 'Route Map', grad: 'from-blue-900 via-cyan-900 to-teal-900', img: null },
-      { label: 'Graph View', grad: 'from-cyan-900 via-blue-900 to-indigo-900', img: null },
+      { label: 'Route Optimization', grad: 'from-blue-900 via-cyan-900 to-teal-900', img: '/screenshots/Routing1.png' },
+      { label: 'Network Graph', grad: 'from-cyan-900 via-blue-900 to-indigo-900', img: '/screenshots/Routing2.png' },
     ],
   },
   {
@@ -81,8 +81,12 @@ const projects = [
     demo: 'https://internx.vercel.app',
     demoVideo: null,
     screens: [
-      { label: 'Job Board', grad: 'from-cyan-900 via-teal-900 to-emerald-900', img: null },
-      { label: 'Resume Builder', grad: 'from-teal-900 via-cyan-900 to-blue-900', img: null },
+      { label: 'Job Explorer', grad: 'from-cyan-900 via-teal-900 to-emerald-900', img: '/screenshots/internx1.png' },
+      { label: 'Application Portal', grad: 'from-teal-900 via-cyan-900 to-blue-900', img: '/screenshots/internx2.png' },
+      { label: 'Smart Filters', grad: 'from-emerald-900 via-teal-800 to-cyan-900', img: '/screenshots/internx3.png' },
+      { label: 'AI Analytics', grad: 'from-cyan-800 via-teal-900 to-emerald-800', img: '/screenshots/internx4.png' },
+      { label: 'Resume Analyzer', grad: 'from-teal-800 via-blue-900 to-cyan-800', img: '/screenshots/internx5.png' },
+      { label: 'User Dashboard', grad: 'from-blue-900 via-indigo-900 to-purple-900', img: '/screenshots/internx6.png' },
     ],
   },
 ];
@@ -417,7 +421,6 @@ const Projects = () => {
 
   // Slow continuous rotation
   useEffect(() => {
-    if (paused) return;
     const animate = (ts) => {
       if (lastTime.current !== null) {
         const delta = ts - lastTime.current;
@@ -431,16 +434,14 @@ const Projects = () => {
       cancelAnimationFrame(frameRef.current);
       lastTime.current = null;
     };
-  }, [paused]);
+  }, []);
 
   const handleSelect = (project) => {
-    setPaused(true);
     setActiveProject(project);
   };
 
   const handleClose = () => {
     setActiveProject(null);
-    setPaused(false);
   };
 
   return (
