@@ -111,7 +111,9 @@ const Hero = () => {
               <motion.a
                 id="download-resume-btn"
                 href="/resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Vinya_Aggarwal_Resume.pdf"
                 className="btn-secondary group px-10 py-4 rounded-xl font-bold flex items-center gap-2"
                 whileTap={{ scale: 0.93 }}
               >

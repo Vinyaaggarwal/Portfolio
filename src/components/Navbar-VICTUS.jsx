@@ -54,11 +54,11 @@ const Navbar = ({ scrollProgress }) => {
           <motion.a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <Zap size={16} className="text-white" />
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-white/10 bg-black/40 flex items-center justify-center shadow-lg group-hover:border-primary/50 transition-all duration-300">
+              <img src="/favicon.svg.png" alt="Vinya Aggarwal Logo" className="w-full h-full object-cover" />
             </div>
             <span className="font-bold text-lg text-text-primary tracking-widest">VA</span>
           </motion.a>

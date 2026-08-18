@@ -7,26 +7,49 @@ import GithubIcon from './GithubIcon';
 const projects = [
   {
     id: 1,
-    title: 'Expense Tracker',
-    emoji: '💰',
-    color: '#a855f7',
-    colorDark: 'rgba(168,85,247,0.15)',
-    gradient: 'from-purple-600 to-blue-600',
-    tag: 'Full Stack · MERN',
+    title: 'Object Tracking',
+    emoji: '👁️',
+    color: '#10b981',
+    colorDark: 'rgba(16,185,129,0.15)',
+    gradient: 'from-emerald-600 to-teal-600',
+    tag: 'Computer Vision · OpenCV',
     description:
-      'Full-stack MERN application for personal expense tracking, budgeting, and financial analytics. Features interactive dashboards, category filters, trend charts, and JWT-based authentication.',
-    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Chart.js'],
-    github: 'https://github.com/vinyaaggarwal',
-    demo: 'https://expense-tracker-demo.vercel.app',
+      'Real-time object tracking system built using OpenCV and YOLO for detecting and tracking objects with high precision in live video streams.',
+    tech: ['Python', 'OpenCV', 'YOLO', 'Computer Vision', 'Deep Learning'],
+    github: 'https://github.com/vinyaaggarwal/real-time-object-tracking-opencv',
+    demo: 'https://github.com/vinyaaggarwal/real-time-object-tracking-opencv',
     demoVideo: null,
-    // Simulated screenshot colors (gradient placeholders)
     screens: [
-      { label: 'Dashboard', grad: 'from-purple-900 via-purple-800 to-blue-900', img: null },
-      { label: 'Analytics', grad: 'from-blue-900 via-indigo-800 to-purple-900', img: null },
+      { label: 'Webcam Tracking', grad: 'from-cyan-900 via-emerald-900 to-teal-900', img: '/screenshots/webcam1.png' },
+      { label: 'Real-Time Webcam', grad: 'from-cyan-900 via-teal-900 to-emerald-900', img: '/screenshots/webcam2.png' },
+      { label: 'Image Detection', grad: 'from-emerald-900 via-teal-900 to-cyan-900', img: '/screenshots/upload_images1.png' },
+      { label: 'Multi-Object Detection', grad: 'from-emerald-900 via-cyan-900 to-teal-900', img: '/screenshots/upload_images2.png' },
+      { label: 'Video Stream', grad: 'from-teal-900 via-emerald-900 to-slate-900', img: '/screenshots/upload_videos1.png' },
+      { label: 'Video Analytics', grad: 'from-teal-900 via-cyan-900 to-emerald-900', img: '/screenshots/upload_videos2.png' },
     ],
   },
   {
     id: 2,
+    title: 'News Recommender',
+    emoji: '📰',
+    color: '#a855f7',
+    colorDark: 'rgba(168,85,247,0.15)',
+    gradient: 'from-purple-600 to-indigo-600',
+    tag: 'AI/ML · NLP',
+    description:
+      'AI-powered personalized news recommendation system using NLP, TF-IDF text vectorization, and cosine similarity for dynamic news suggestions.',
+    tech: ['Python', 'NLP', 'TF-IDF', 'Cosine Similarity', 'Scikit-Learn'],
+    github: 'https://github.com/vinyaaggarwal/personalized-news-recommendation',
+    demo: 'https://github.com/vinyaaggarwal/personalized-news-recommendation',
+    demoVideo: null,
+    screens: [
+      { label: 'Main Feed', grad: 'from-purple-900 via-indigo-900 to-violet-900', img: '/screenshots/home.png' },
+      { label: 'AI Recommendations', grad: 'from-indigo-900 via-purple-900 to-slate-900', img: '/screenshots/recommendations.png' },
+      { label: 'Similarity Analytics', grad: 'from-violet-900 via-indigo-900 to-purple-900', img: '/screenshots/analytics.png' },
+    ],
+  },
+  {
+    id: 3,
     title: 'Routing Engine',
     emoji: '📍',
     color: '#3b82f6',
@@ -45,7 +68,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: 'PERRY',
     emoji: '🧠',
     color: '#ec4899',
@@ -67,16 +90,16 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: 'InternX',
     emoji: '🚀',
     color: '#06b6d4',
-    colorDark: 'rgba(6,182,212,0.15)',
+    colorDark: 'rgba(0,182,212,0.15)',
     gradient: 'from-cyan-600 to-teal-600',
-    tag: 'Platform · Career Tech',
+    tag: 'AI/ML · Career Tech Platform',
     description:
-      'Comprehensive platform helping students discover, manage, and track internship opportunities. Features AI-driven RL recommendations, smart filters, ATS resume builder, and multi-role authentication.',
-    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Python', 'AI/ML'],
+      'AI-Powered Job & ATS Resume Platform featuring real-time preview, PDF export via html2pdf.js, RAG pipeline (Groq Llama-3 & Gemini APIs) for tailored bios & JD-aligned bullet rewrites, and a LinUCB Contextual Bandit recommendation engine trained via REINFORCE policy-gradient algorithm.',
+    tech: ['React.js', 'Vite', 'FastAPI', 'Python', 'PyTorch', 'spaCy', 'SentenceTransformers', 'RAG', 'Groq API', 'Gemini API', 'Docker', 'MongoDB', 'MySQL', 'Pydantic'],
     github: 'https://github.com/vinyaaggarwal',
     demo: 'https://internx.vercel.app',
     demoVideo: null,
@@ -393,7 +416,10 @@ const DetailPanel = ({ project, onClose }) => (
           <ExternalLink size={16} /> Live Demo
         </motion.a>
 
-        <motion.button
+        <motion.a
+          href={project.demoVideo || project.demo || project.github}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border transition-all"
           style={{
             background: `${project.color}15`,
@@ -402,10 +428,9 @@ const DetailPanel = ({ project, onClose }) => (
           }}
           whileHover={{ scale: 1.04, background: `${project.color}25` }}
           whileTap={{ scale: 0.96 }}
-          onClick={() => alert('Demo video coming soon!')}
         >
           <Play size={16} fill="currentColor" /> Demo Video
-        </motion.button>
+        </motion.a>
       </div>
     </div>
   </motion.div>

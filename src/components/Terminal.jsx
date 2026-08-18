@@ -40,7 +40,7 @@ const Terminal = () => {
           newHistory.push({ type: 'output', content: 'Technical Stack: React, Node.js, Python, TensorFlow, C++, MongoDB...' });
           break;
         case 'projects':
-          newHistory.push({ type: 'output', content: 'Active Projects: Expense Tracker, TripMate, PERRY (AI Mental Health), InternX.' });
+          newHistory.push({ type: 'output', content: 'Active Projects: Object Tracking (OpenCV), News Recommender (NLP), Routing Engine, PERRY, InternX.' });
           break;
         case 'clear':
           setHistory([]);

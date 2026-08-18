@@ -113,7 +113,9 @@ const Hero = () => {
               <motion.a
                 id="download-resume-btn"
                 href="/resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Vinya_Aggarwal_Resume.pdf"
                 className="group px-8 py-4 rounded-xl font-semibold text-white border border-white/20 glass hover:border-purple-500/60 transition-all duration-300 flex items-center gap-2"
                 whileTap={{ scale: 0.93 }}
               >
@@ -129,9 +131,9 @@ const Hero = () => {
             className="mt-20 grid grid-cols-3 gap-6 max-w-md mx-auto"
           >
             {[
-              { value: '8.36', label: 'CGPA' },
-              { value: '4+', label: 'Projects' },
-              { value: '1', label: 'Internship' },
+              { value: '8.48', label: 'CGPA' },
+              { value: '10+', label: 'Projects' },
+              { value: '2', label: 'Internship' },
             ].map(stat => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-3xl font-black gradient-text">{stat.value}</div>

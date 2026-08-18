@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { GraduationCap, Code2, Brain, Target } from 'lucide-react';
+import { GraduationCap, Code2, Brain, Target, Trophy } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -47,22 +47,22 @@ const About = () => {
     {
       icon: <GraduationCap size={22} className="text-purple-400" />,
       title: 'Education',
-      desc: 'B.Tech CSE (2023–2027) · 3rd Year · CGPA 8.36',
+      desc: 'B.Tech CSE (2023–2027) · CGPA 8.48 · JIIT Noida',
     },
     {
-      icon: <Code2 size={22} className="text-blue-400" />,
-      title: 'Full Stack',
-      desc: 'MERN Stack · REST APIs · Scalable Systems',
+      icon: <Trophy size={22} className="text-amber-400" />,
+      title: 'Amazon ML School',
+      desc: 'Top 2.2% Selectee · Shortlisted out of 134,421+ candidates',
     },
     {
       icon: <Brain size={22} className="text-cyan-400" />,
-      title: 'AI / ML',
-      desc: 'TensorFlow · OpenCV · NLP · Emotion Detection',
+      title: 'AI / ML & GenAI',
+      desc: 'OCI Certified GenAI Pro · PyTorch · RAG · Computer Vision',
     },
     {
-      icon: <Target size={22} className="text-purple-400" />,
-      title: 'Competitive',
-      desc: 'DSA · OOP · DBMS · Problem Solving',
+      icon: <Code2 size={22} className="text-blue-400" />,
+      title: 'Full Stack & APIs',
+      desc: 'MERN Stack · FastAPI · Scalable Systems · 2 Internships',
     },
   ];
 
@@ -86,27 +86,24 @@ const About = () => {
             <motion.div variants={fadeUp} className="space-y-5">
               <div className="glass rounded-2xl p-6 neon-border">
                 <p className="text-slate-300 leading-relaxed text-base">
-                  I'm <span className="text-white font-semibold">Vinya Aggarwal</span>, a 3rd-year
+                  I'm <span className="text-white font-bold">Vinya Aggarwal</span>, a 3rd-year
                   B.Tech Computer Science student (2023–2027) with a{' '}
-                  <span className="text-purple-400 font-semibold">CGPA of 8.36</span>. My passion
-                  lies at the intersection of backend engineering, AI/ML, and real-world problem
-                  solving.
+                  <span className="text-purple-400 font-bold">CGPA of 8.48</span>. My passion
+                  lies at the intersection of full-stack engineering, artificial intelligence, and scalable software systems.
                 </p>
               </div>
               <div className="glass rounded-2xl p-6">
                 <p className="text-slate-300 leading-relaxed text-base">
-                  I build <span className="text-cyan-400 font-semibold">scalable full-stack applications</span>{' '}
-                  using the MERN stack, design efficient algorithms, and explore machine learning
-                  to create products that matter. I believe great software should be both powerful
-                  and beautiful.
+                  Recently shortlisted among the top 3,000 candidates nationwide out of{' '}
+                  <span className="text-amber-300 font-bold">134,421+ registrations for Amazon ML Summer School 2026</span>.
+                  I am also an <span className="text-rose-400 font-bold">OCI 2025 Certified Generative AI Professional</span> with
+                  hands-on internship experience in Artificial Intelligence (Codec Tech) and Full Stack Development (Infosys).
                 </p>
               </div>
               <div className="glass rounded-2xl p-6">
                 <p className="text-slate-300 leading-relaxed text-base">
-                  Whether it's architecting{' '}
-                  <span className="text-blue-400 font-semibold">REST APIs</span>, crafting AI
-                  pipelines, or optimizing graph algorithms — I'm always pushing the boundary of
-                  what's possible with code.
+                  Whether architecting <span className="text-cyan-400 font-bold">RAG pipelines & LLM agents</span>, crafting
+                  high-speed graph algorithms in C++, or training computer vision models — I'm dedicated to building software that drives real impact.
                 </p>
               </div>
             </motion.div>

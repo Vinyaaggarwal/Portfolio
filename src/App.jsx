@@ -7,6 +7,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import CursorSpotlight from './components/CursorSpotlight';
 import FallingParticles from './components/FallingParticles';
@@ -81,6 +82,10 @@ function App() {
         <div className="section-divider" />
 
         <Projects />
+
+        <div className="section-divider" />
+
+        <Certifications />
 
         <div className="section-divider" />
 

@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -53,11 +54,11 @@ const Navbar = ({ scrollProgress }) => {
           <motion.a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center animate-pulse-glow">
-              <Zap size={16} className="text-white" />
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-white/10 bg-black/40 flex items-center justify-center shadow-lg group-hover:border-purple-500/50 transition-all duration-300">
+              <img src="/favicon.svg.png" alt="Vinya Aggarwal Logo" className="w-full h-full object-cover" />
             </div>
             <span className="font-bold text-lg gradient-text tracking-wide">VA</span>
           </motion.a>
